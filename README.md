@@ -1,41 +1,35 @@
 # PCB Business Card
 
-A custom PCB business card designed in [KiCad](https://www.kicad.org/) (version 9.0.4).
+A business card that is a printed circuit board. Two layers, 1.6 mm, card-sized.
+This repo holds the fab outputs — Gerbers and drill files — ready to upload to a board house.
 
-## Overview
+## Attribution
 
-This project contains the manufacturing files (Gerber files and drill files) for a custom PCB business card. Instead of a traditional paper card, this design is a functional printed circuit board in business card form factor.
+This started from a third-party KiCad business-card template, which is why every file is
+still named `Shawn_PCB_Business_card-*` and why that project name appears in the Gerber
+headers (`%TF.ProjectId,Shawn_PCB_Business_card%`). The layout was modified from there in
+KiCad 9.0.4. The original template author retains credit for the base design.
 
-## Files
+## What's here
 
-| File | Description |
-|------|-------------|
-| `Shawn_PCB_Business_card-CuTop.gbr` | Top copper layer |
-| `Shawn_PCB_Business_card-CuBottom.gbr` | Bottom copper layer |
-| `Shawn_PCB_Business_card-SilkTop.gbr` | Top silkscreen layer |
-| `Shawn_PCB_Business_card-SilkBottom.gbr` | Bottom silkscreen layer |
-| `Shawn_PCB_Business_card-MaskTop.gbr` | Top solder mask layer |
-| `Shawn_PCB_Business_card-MaskBottom.gbr` | Bottom solder mask layer |
-| `Shawn_PCB_Business_card-EdgeCuts.gbr` | Board outline (edge cuts) |
-| `Shawn_PCB_Business_card-PTH.drl` | Plated through-hole drill file |
-| `Shawn_PCB_Business_card-NPTH.drl` | Non-plated through-hole drill file |
-| `Shawn_PCB_Business_card-PTH-drl_map.pdf` | Plated drill map (PDF) |
-| `Shawn_PCB_Business_card-NPTH-drl_map.pdf` | Non-plated drill map (PDF) |
+Eleven fab outputs: copper, silkscreen and solder mask for both sides, the board outline,
+plated and non-plated drill files, and the two drill maps.
 
-## Manufacturing
+The KiCad sources (`.kicad_pcb`, `.kicad_sch`) are **not** in this repo, so you can send
+these files to a fab but you cannot open the design and edit it.
 
-To order this PCB, upload the Gerber (`.gbr`) and drill (`.drl`) files to a PCB manufacturer such as:
+## Ordering
 
-- [JLCPCB](https://jlcpcb.com/)
-- [PCBWay](https://www.pcbway.com/)
-- [OSH Park](https://oshpark.com/)
+Upload the `.gbr` and `.drl` files to [JLCPCB](https://jlcpcb.com/),
+[PCBWay](https://www.pcbway.com/) or [OSH Park](https://oshpark.com/).
 
-### Recommended Specs
+| setting | value |
+| :--- | :--- |
+| layers | 2 |
+| thickness | 1.6 mm |
+| finish | ENIG — gold, and it looks considerably better than HASL on a card |
 
-- **Layers:** 2
-- **Board thickness:** 1.6 mm
-- **Finish:** ENIG (gold finish) recommended for aesthetics
+## Status
 
-## Tools Used
-
-- **KiCad** 9.0.4 — PCB design software
+Fab outputs only. Not verified by an actual board order, so check the outline and drill
+alignment in your fab's Gerber viewer before paying for it.
